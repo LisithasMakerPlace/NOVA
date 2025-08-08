@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./favicon.png">
+  <title>NOVA</title>
+
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link href='./style.css?ver=1.0' type="text/css" rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="text/javascript" src="./main.js?ver=1.0"></script>
+  <script type="module" src="JS/firebase.js?ver=1.0"></script>
+  <script type="module" src="JS/firestore.js?ver=1.0"></script>
+  <script type="module" src="JS/graphs.js?ver=1.0"></script>
+</head>
+<body>
+  <div class="band"><center><img class="logo" src="logo.png"></img></center></div>
+  <center><div id="map"></div></center>
+
+  <div class="meadia">
+  <center><div class="bucket"> <!--Change These Parameters According to Your Sensor Data-->
+    <div class="heading">Real Time Data</div>
+    <div class="wrap"><div class="param">General Level : </div><div class="val" id="LED">0</div></div>
+    <div class="wrap"><div class="param">Sound Level : </div><div class="val" id="decibel">0</div><div class="unit"> dB</div></div>
+    <div class="PMS7003">
+      <div class="wrap"><div class="param">PM1 Particles : </div><div class="val" id="PM1">0</div><div class="unit"> ug/m3</div></div>
+      <div class="wrap"><div class="param">PM25 Particles : </div><div class="val" id="PM25">0</div><div class="unit"> ug/m3</div></div>
+      <div class="wrap"><div class="param">PM10 Particles : </div><div class="val" id="PM10">0</div><div class="unit"> ug/m3</div></div>
+    </div>
+    <div class="SVM30">
+      <div class="wrap"><div class="param">TVOC : </div><div class="val" id="TVOC">0</div><div class="unit"> ppb</div></div>
+      <div class="wrap"><div class="param">CO2 EQ : </div><div class="val" id="CO2eq">0</div><div class="unit"> ppm</div></div>
+      <div class="wrap"><div class="param">Humidity : </div><div class="val" id="hum">0</div><div class="unit"> %</div></div>
+      <div class="wrap"><div class="param">Temparature : </div><div class="val" id="temp">0</div><div class="unit"> C*</div></div>
+      <div class="wrap"><div class="param">Absolute Humidity : </div><div class="val" id="A_hum">0</div><div class="unit"> %</div></div>
+    </div>
+    <div class="csv"><center><div class="wrapbtn" id="csvbtn">Export CSV</div></center></div>
+  </div></center>
+
+  <div class="charts">
+    <div class="row">
+      <center class="cwrap"><canvas id="myChart1" class="chart"></canvas></center>
+      <center class="cwrap"><canvas id="myChart2" class="chart"></canvas></center>
+    </div>
+    <div class="row">
+      <center class="cwrap"><canvas id="myChart3" class="chart"></canvas></center>
+      <center class="cwrap"><canvas id="myChart4" class="chart"></canvas></center>
+    </div>
+    <div class="row">
+      <center class="cwrap"><canvas id="myChart5" class="chart"></canvas></center>
+      <center class="cwrap"><canvas id="myChart6" class="chart"></canvas></center>
+    </div>
+    <div class="row">
+      <center class="cwrap"><canvas id="myChart7" class="chart"></canvas></center>
+      <center class="cwrap"><canvas id="myChart8" class="chart"></canvas></center>
+    </div>
+  </div>
+  </div>
+
+  <h2 class="copy">&copy; Team Nova 2025</h2>
+  <h2 class="description">An Opensource Sensor Mesh by Lisitha, Umira, Himansi, Reshmi.</h2>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly&loading=async" defer></script> <!--PUT YOUR GOOGLE MAPS JAVASCRYPT API KEY HERE-->
+  </body>
+</html>
